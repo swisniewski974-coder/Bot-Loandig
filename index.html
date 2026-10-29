@@ -3,75 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Najlepszy Bot Esportowy na Discorda</title>
+    <title>NexBot Esports - Najpotężniejszy Bot Turniejowy</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 40px 20px; }
-        header { max-width: 800px; margin: 0 auto 40px auto; }
-        h1 { color: #38bdf8; font-size: 2.8rem; margin-bottom: 20px; }
-        p { color: #94a3b8; font-size: 1.1rem; line-height: 1.6; }
-        .btn { display: inline-block; background-color: #5865F2; color: white; padding: 15px 35px; font-size: 1.2rem; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 25px; transition: background 0.3s; box-shadow: 0 4px 14px rgba(88, 101, 242, 0.4); }
-        .btn:hover { background-color: #4752C4; }
+        body { 
+            background: linear-gradient(135deg, #090d16 0%, #0f172a 50%, #1e1b4b 100%); 
+            color: #f8fafc; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-align: center; 
+            padding: 50px 20px; 
+            min-height: 100vh;
+        }
+        header { max-width: 900px; margin: 0 auto 50px auto; animation: fadeIn 1s ease-in-out; }
         
-        /* Podgląd/Symulacja panelu bota */
-        .preview-container { max-width: 600px; margin: 40px auto; background-color: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; text-align: left; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-        .preview-header { display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
-        .preview-dot { width: 12px; height: 12px; background-color: #ef4444; border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 18px 0 0 #f59e0b, 36px 0 0 #10b981; }
-        .preview-title { font-size: 0.9rem; color: #94a3b8; margin-left: 50px; font-weight: bold; }
-        .preview-body { font-family: 'Courier New', Courier, monospace; font-size: 0.95rem; color: #38bdf8; line-height: 1.5; }
-        .cmd { color: #f43f5e; font-weight: bold; }
-        .res { color: #cbd5e1; background: #0f172a; padding: 10px; border-radius: 6px; margin-top: 8px; border-left: 4px solid #38bdf8; }
+        .badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 16px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
 
-        .features { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 1000px; margin: 40px auto 0 auto; }
-        .card { background-color: #1e293b; border: 1px solid #334155; padding: 25px; border-radius: 12px; width: 280px; text-align: left; }
-        .card h3 { color: #38bdf8; margin-bottom: 10px; font-size: 1.3rem; }
-        .card p { font-size: 1rem; color: #cbd5e1; }
-        footer { margin-top: 50px; color: #64748b; font-size: 0.9rem; }
+        h1 { 
+            color: #ffffff; 
+            font-size: 3.5rem; 
+            margin-bottom: 20px; 
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+        }
+        h1 span { color: #38bdf8; }
+        
+        p { color: #94a3b8; font-size: 1.25rem; line-height: 1.6; max-width: 700px; margin: 0 auto; }
+        
+        .btn { 
+            display: inline-block; 
+            background: linear-gradient(135deg, #5865F2 0%, #4752C4 100%); 
+            color: white; 
+            padding: 18px 45px; 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            margin-top: 35px; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 10px 25px rgba(88, 101, 242, 0.5);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn:hover { 
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(88, 101, 242, 0.8);
+        }
+        
+        /* Kosmiczny panel live */
+        .preview-container { 
+            max-width: 700px; 
+            margin: 50px auto; 
+            background: rgba(30, 41, 59, 0.7); 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.3); 
+            border-radius: 16px; 
+            padding: 25px; 
+            text-align: left; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5); 
+            animation: pulseGlow 4s infinite alternate;
+        }
+        .preview-header { display: flex; align-items: center; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; }
+        .preview-dot { width: 12px; height: 12px; background-color: #ef4444; border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 18px 0 0 #f59e0b, 36px 0 0 #10b981; }
+        .preview-title { font-size: 0.85rem; color: #38bdf8; margin-left: 50px; font-weight: bold; letter-spacing: 1px; }
+        .preview-body { font-family: 'Courier New', Courier, monospace; font-size: 1rem; color: #38bdf8; line-height: 1.6; }
+        .cmd { color: #f43f5e; font-weight: bold; }
+        .res { color: #e2e8f0; background: rgba(15, 23, 42, 0.8); padding: 12px; border-radius: 8px; margin-top: 10px; border-left: 4px solid #38bdf8; }
+
+        .features { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; max-width: 1100px; margin: 60px auto 0 auto; }
+        .card { 
+            background: rgba(30, 41, 59, 0.5); 
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            padding: 30px; 
+            border-radius: 16px; 
+            width: 320px; 
+            text-align: left; 
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+        }
+        .card h3 { color: #38bdf8; margin-bottom: 15px; font-size: 1.4rem; }
+        .card p { font-size: 1rem; color: #94a3b8; text-align: left; }
+        
+        footer { margin-top: 80px; color: #64748b; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 10px rgba(56, 189, 248, 0.1); }
+            100% { box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 25px rgba(56, 189, 248, 0.3); }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Najlepszy Bot Esportowy na Discorda</h1>
-        <p>Przenieś rywalizację na swoim serwerze na poziom mistrzowski dzięki zaawansowanym systemom turniejowym i automatycznej obsłudze graczy.</p>
-        <!-- Twój link zaproszenia podpięty bezpośrednio pod przycisk -->
+        <div class="badge">🔥 Next-Gen Discord Bot</div>
+        <h1>Wznieś Serwer na <span>Poziom Esportu</span></h1>
+        <p>Najbardziej zaawansowany system turniejowy, automatyczne drabinki, zarządzanie drużynami i pancerna moderacja w jednym miejscu.</p>
         <a href="https://discord.com/oauth2/authorize?client_id=1554469566879502369&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">Dodaj do Discorda</a>
     </header>
 
-    <!-- Wizualny podgląd systemu esportowego -->
     <div class="preview-container">
         <div class="preview-header">
             <span class="preview-dot"></span>
-            <span class="preview-title">🎮 SYMULACJA PANELU ESPORTOWEGO (LIVE)</span>
+            <span class="preview-title">SYSTEM ESPORTOWY // LIVE TERMINAL</span>
         </div>
         <div class="preview-body">
-            <p><span class="cmd">/turniej stworz</span> gra: "CS2 5v5" nagroda: "500 PLN"</p>
+            <p><span class="cmd">/turniej stworz</span> gra: "CS2 5v5" pula: "1000 PLN"</p>
             <div class="res">
-                ✅ <strong>Turniej utworzony pomyślnie!</strong><br>
-                🏆 Gra: CS2 5v5 | Pula: 500 PLN<br>
-                👥 Zapisane drużyny: 8/16<br>
-                🔗 Status: <span style="color: #10b981;">Trwają zapisy (Kliknij, aby dołączyć)</span>
+                ⚡ <strong>Turniej zainicjalizowany pomyślnie!</strong><br>
+                🏆 Kategoria: CS2 5v5 Pro | Pula: 1000 PLN<br>
+                📊 Drabinka: Automatyczna (Double Elimination)<br>
+                🔗 Status: <span style="color: #10b981; font-weight: bold;">[ REKRUTACJA OTWARTA ]</span>
             </div>
         </div>
     </div>
 
     <section class="features">
         <div class="card">
-            <h3>🏆 Zaawansowany Esport</h3>
-            <p>Organizuj profesjonalne turnieje, automatyczne drabinki, zapisy drużynowe i zarządzaj wynikami bez wysiłku.</p>
+            <h3>🏆 System Turniejowy Pro</h3>
+            <p>Pełna automatyzacja zapisów, generowanie drabinek pucharowych, powiadomienia meczowe i rozliczanie wyników bezkietunkowo.</p>
         </div>
         <div class="card">
-            <h3>🛡️ Pełna Moderacja</h3>
-            <p>Chroń swoją społeczność przed spamem, rajdami i niechcianymi linkami dzięki inteligentnym zabezpieczeniom 24/7.</p>
+            <h3>🛡️ Tarcza Anty-Raidowa</h3>
+            <p>Zaawansowane algorytmy chroniące Twój serwer przed botami, masowym spamem i złośliwymi linkami przez 24 godziny na dobę.</p>
         </div>
         <div class="card">
-            <h3>⚡ Stabilność i Szybkość</h3>
-            <p>Niezawodne działanie bez lagów, błyskawiczne komendy i stała gotowość do akcji na Twoim serwerze.</p>
+            <h3>⚡ Ekstremalna Szybkość</h3>
+            <p>Optymalizacja kodu gwarantująca zerowe opóźnienia, natychmiastowe wykonywanie komend i stabilność w każdej sekundzie.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Twój Projekt. Wszelkie prawa zastrzeżone.</p>
+        <p>&copy; 2026 NexBot Esports. Wszelkie prawa zastrzeżone.</p>
     </footer>
 
 </body>
