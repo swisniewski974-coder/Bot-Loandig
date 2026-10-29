@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJEKT X • Secure Ecosystem & SaaS</title>
+    <title>PROJEKT X • Najlepszy Bot Esportowy na Discorda</title>
     <style>
         * {
             margin: 0;
@@ -36,10 +36,10 @@
             color: #38bdf8;
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
         }
-        .status-badge {
-            background: rgba(16, 185, 129, 0.1);
-            color: #34d399;
-            border: 1px solid rgba(52, 211, 153, 0.3);
+        .badge-top {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -48,49 +48,110 @@
             align-items: center;
             gap: 8px;
         }
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #34d399;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #34d399;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
         main {
-            max-width: 1000px;
-            margin: 60px auto;
+            max-width: 900px;
+            margin: 40px auto;
             padding: 0 20px;
             text-align: center;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
+            line-height: 1.2;
             background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         p.subtitle {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #9ca3af;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             line-height: 1.6;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            font-weight: 700;
+            padding: 14px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 40px;
+        }
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
+        }
+        .terminal {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 14px;
+            padding: 24px;
+            text-align: left;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 12px;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            letter-spacing: 1px;
+        }
+        .dots {
+            display: flex;
+            gap: 6px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ef4444; }
+        .dot-yellow { background: #f59e0b; }
+        .dot-green { background: #10b981; }
+        
+        .command-line {
+            font-family: monospace;
+            color: #f87171;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+        .embed-box {
+            background: #0f172a;
+            border-left: 4px solid #38bdf8;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+        }
+        .embed-title {
+            color: #38bdf8;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .embed-row {
+            margin-bottom: 6px;
+            color: #94a3b8;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .card {
             background: #111827;
             border: 1px solid #1f2937;
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             text-align: left;
             transition: transform 0.3s, border-color 0.3s;
         }
@@ -100,28 +161,13 @@
         }
         .card h3 {
             color: #38bdf8;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-size: 1.15rem;
         }
         .card p {
             color: #9ca3af;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.5;
-        }
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #0284c7, #4f46e5);
-            color: white;
-            font-weight: 700;
-            padding: 14px 35px;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(79, 70, 229, 0.6);
         }
         footer {
             text-align: center;
@@ -129,39 +175,62 @@
             background: rgba(17, 24, 39, 0.9);
             border-top: 1px solid #1f2937;
             color: #6b7280;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">PROJEKT X</div>
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            Secure Ecosystem
+        <div class="badge-top">
+            🔥 NEXT-GEN DISCORD BOT
         </div>
     </header>
 
     <main>
-        <h1>ARCHITEKTURA NOWEJ GENERACJI</h1>
-        <p class="subtitle">Całkowicie bezkompromisowy kombajn systemowy. Zero zamulania, zero amatorskich skryptów z poradników. Pełna automatyzacja chmurowa i dominacja bez litości.</p>
+        <h1>Najlepszy Bot Esportowy na Discorda</h1>
+        <p class="subtitle">Przenieś rywalizację na swoim serwerze na poziom mistrzowski dzięki zaawansowanym systemom turniejowym i automatycznej obsłudze graczy.</p>
         
-        <div class="grid">
-            <div class="card">
-                <h3>⚡ System Turniejowy Pro</h3>
-                <p>Pełna automatyzacja zapisów, generowanie przejrzystych drabin (Double Elimination) i natychmiastowy status rekrutacji otwartej.</p>
+        <a href="https://discord.com" target="_blank" class="cta-btn">Dodaj do Disclorda</a>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                </div>
+                <span>SYSTEM ESPORTOWY // LIVE TERMINAL</span>
             </div>
-            <div class="card">
-                <h3>🛡️ SaaS & Zapora</h3>
-                <p>Najbardziej zaawansowany system e-sportowy, zarządzanie drużynami i pancerna moderacja w jednym miejscu.</p>
+            <div class="command-line">
+                /turniej stworz gra: "CS2 5v5" pula: "1000 PLN"
+            </div>
+            <div class="embed-box">
+                <div class="embed-title">⚡ Turniej zainicjalizowany pomyślnie!</div>
+                <div class="embed-row">🏆 Kategoria: CS2 5v5 Pro | Pula: 1000 PLN</div>
+                <div class="embed-row">📊 Drabinka: Automatyczna (Double Elimination)</div>
+                <div class="embed-row" style="color: #34d399;">🔗 Status: [ REKRUTACJA OTWARTA ]</div>
             </div>
         </div>
 
-        <a href="https://discord.com" target="_blank" class="cta-btn">Dołącz do Elity / SaaS</a>
+        <div class="grid">
+            <div class="card">
+                <h3>🏆 System Turniejowy Pro</h3>
+                <p>Pełna automatyzacja zapisów, generowanie drabinek pucharowych, powiadomienia meczowe i rozliczanie wyników bezkietunkowo.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Tarcza Anty-Raidowa</h3>
+                <p>Zaawansowane algorytmy chroniące Twój serwer przed botami, masowym spamem i złośliwymi linkami przez 24 godziny na dobę.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Ekstremalna Szybkość</h3>
+                <p>Optymalizacja kodu gwarantująca zerowe opóźnienia, natychmiastowe wykonywanie komend i stabilność w każdej sekundzie.</p>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>© 2026 PROJEKT X • Wszelkie prawa zastrzeżone. Architektura Autonomiczna.</p>
+        <p>© 2026 PROJEKT X • Wszelkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
