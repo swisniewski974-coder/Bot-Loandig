@@ -84,14 +84,17 @@
             transform: scale(1.05);
             box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
         }
+        /* KLUCZOWY STYL TERMINALA */
         .terminal {
-            background: #111827;
-            border: 1px solid #1f2937;
+            background: #111827 !important;
+            border: 2p solid #38bdf8 !important;
             border-radius: 14px;
             padding: 24px;
             text-align: left;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: block !important;
+            visibility: visible !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         .terminal-header {
             display: flex;
@@ -153,11 +156,6 @@
             border-radius: 12px;
             padding: 25px;
             text-align: left;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
         }
         .card h3 {
             color: #38bdf8;
@@ -193,6 +191,7 @@
         
         <a href="https://discord.com" target="_blank" class="cta-btn">Dodaj do Disclorda</a>
 
+        <!-- TERMINAL LIVE -->
         <div class="terminal">
             <div class="terminal-header">
                 <div class="dots">
