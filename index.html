@@ -84,17 +84,14 @@
             transform: scale(1.05);
             box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
         }
-        /* KLUCZOWY STYL TERMINALA */
         .terminal {
-            background: #111827 !important;
-            border: 2p solid #38bdf8 !important;
+            background: #111827;
+            border: 1px solid #1f2937;
             border-radius: 14px;
             padding: 24px;
             text-align: left;
             margin-bottom: 40px;
-            display: block !important;
-            visibility: visible !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         .terminal-header {
             display: flex;
@@ -156,6 +153,11 @@
             border-radius: 12px;
             padding: 25px;
             text-align: left;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
         }
         .card h3 {
             color: #38bdf8;
@@ -191,7 +193,6 @@
         
         <a href="https://discord.com" target="_blank" class="cta-btn">Dodaj do Disclorda</a>
 
-        <!-- TERMINAL LIVE -->
         <div class="terminal">
             <div class="terminal-header">
                 <div class="dots">
@@ -214,16 +215,12 @@
 
         <div class="grid">
             <div class="card">
-                <h3>🏆 System Turniejowy Pro</h3>
-                <p>Pełna automatyzacja zapisów, generowanie drabinek pucharowych, powiadomienia meczowe i rozliczanie wyników.</p>
+                <h3>⚡ Pley Wizard (Automatyzacja)</h3>
+                <p>Błyskawiczna konfiguracja struktury turniejowej, automatyczne tworzenie kanałów meczowych, zarządzanie składami oraz dynamiczne generowanie drabinek pucharowych bez kiwanego palcem.</p>
             </div>
             <div class="card">
-                <h3>🛡️ Tarcza Anty-Raidowa</h3>
-                <p>Zaawansowane algorytmy chroniące Twój serwer przed botami, masowym spamem i złośliwymi linkami 24/7.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ Ekstremalna Szybkość</h3>
-                <p>Optymalizacja kodu gwarantująca zerowe opóźnienia i natychmiastowe wykonywanie komend.</p>
+                <h3>🛡️ SaaS & Zapora Anty-Raid</h3>
+                <p>Pancerny system autoryzacji serwerowej, inteligentna ochrona przed botami masowymi, natychmiastowe wykrywanie spamu oraz pełne wsparcie SaaS dla zarządzania licencjami w tle.</p>
             </div>
         </div>
     </main>
