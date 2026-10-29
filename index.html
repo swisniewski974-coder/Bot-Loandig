@@ -74,7 +74,7 @@
             box-shadow: 0 15px 40px rgba(88, 101, 242, 0.8);
         }
 
-        /* Sekcja z podstawami w pigułce (Szybkie statystyki) */
+        /* Sekcja z podstawami w pigułce */
         .quick-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -113,6 +113,47 @@
         .cmd { color: #f43f5e; font-weight: 700; }
         .res { color: #cbd5e1; background: rgba(30, 41, 59, 0.6); padding: 14px; border-radius: 12px; margin-top: 12px; border-left: 4px solid #38bdf8; }
 
+        /* Sekcja Cennika SaaS */
+        .pricing-section { margin: 60px 0; text-align: left; }
+        .pricing-header { text-align: center; margin-bottom: 40px; }
+        .pricing-header h2 { font-size: 2.5rem; color: #fff; font-weight: 800; margin-bottom: 10px; }
+        .pricing-header p { color: #94a3b8; font-size: 1.1rem; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .price-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 20px;
+            padding: 35px 30px;
+            position: relative;
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease;
+        }
+        .price-card.featured {
+            border: 2px solid #38bdf8;
+            background: rgba(30, 41, 59, 0.7);
+            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+        }
+        .price-card:hover { transform: translateY(-6px); }
+        .popular-badge {
+            position: absolute;
+            top: -14px;
+            right: 30px;
+            background: linear-gradient(135deg, #38bdf8 0%, #4f46e5 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 5px 15px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .price-card h3 { font-size: 1.5rem; color: #fff; margin-bottom: 10px; }
+        .price-card .price { font-size: 2.8rem; font-weight: 900; color: #38bdf8; margin: 20px 0; }
+        .price-card .price span { font-size: 1rem; color: #94a3b8; font-weight: normal; }
+        .price-card ul { list-style: none; margin: 25px 0; color: #cbd5e1; font-size: 0.95rem; line-height: 2; }
+        .price-card ul li::before { content: "✔ "; color: #34d399; font-weight: bold; }
+
         /* Główne funkcje - karty */
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 50px; }
         .card { 
@@ -141,35 +182,83 @@
 
     <div class="container">
         <header>
-            <div class="badge">⚡ Next-Gen Discord Ecosystem &bull; Ultimate Power</div>
+            <div class="badge">⚡ Next-Gen Discord Ecosystem &bull; SaaS Model</div>
             <h1>Wznieś swój serwer na <span>absolutny szczyt esportu</span></h1>
-            <p class="subtitle">Całkowicie bezkompromisowy kombajn systemowy. Zero zamulania, zero amatorskich skryptów z poradników. Pełna automatyzacja chmurowa, natychmiastowe przejmowanie struktur i pancerna wydajność nowej generacji.</p>
+            <p class="subtitle">Całkowicie bezkompromisowy kombajn systemowy. Zero zamulania, automatyczna synchronizacja chmurowa, natychmiastowe przejmowanie struktur i elastyczny model biznesowy.</p>
             
             <div class="btn-box">
                 <a href="https://discord.com/oauth2/authorize?client_id=1554469566879502369&permissions=8&integration_type=0&scope=bot" class="btn" target="_blank">
                     <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                    Wpuść Kombajna na Serwer (Pełna Automatyzacja)
+                    Wpuść Kombajna na Serwer (Aktywuj Free Rok)
                 </a>
             </div>
         </header>
 
-        <!-- Szybkie podstawy w liczbach / pigułce -->
+        <!-- Szybkie statystyki -->
         <div class="quick-stats">
             <div class="stat-box">
-                <h4>100%</h4>
-                <p>Automatyczna Szybka Inicjalizacja</p>
+                <h4>1 Rok</h4>
+                <p>Pełny Dostęp SaaS Gratis</p>
             </div>
             <div class="stat-box">
-                <h4>24/7</h4>
-                <p>Stabilność i Monitoring Chmury</p>
+                <h4>Dynamicznie</h4>
+                <p>Stawki zależne od aktywności</p>
             </div>
             <div class="stat-box">
                 <h4>0 ms</h4>
-                <p>Opóźnień w Reakcji Kombajna</p>
+                <p>Opóźnień w Inicjalizacji</p>
             </div>
         </div>
 
-        <!-- Live Terminal / Podgląd -->
+        <!-- Sekcja Cennika SaaS / Plan Aktywacyjny -->
+        <section class="pricing-section">
+            <div class="pricing-header">
+                <h2>Elastyczny model SaaS</h2>
+                <p>Zacznij bez żadnych kosztów. Dopiero po darmowym roku stawki dostosowują się do skali Twojego serwera.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Paczka Standard</h3>
+                    <div class="price">$50 <span>/ miesiąc</span></div>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Dla mniejszych społeczności i rozwijających się serwerów.</p>
+                    <ul>
+                        <li>Automatyczne przejmowanie struktur</li>
+                        <li>Szybka synchronizacja chmurowa</li>
+                        <li>Podstawowy panel zarządzania</li>
+                        <li>Wsparcie techniczne 24/7</li>
+                    </ul>
+                </div>
+
+                <div class="price-card featured">
+                    <span class="popular-badge">Start Przełomu</span>
+                    <h3>Pakiet Kombajn Pro</h3>
+                    <div class="price">$0 <span>/ pierwszy rok</span></div>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Pełny pakiet startowy. Zyskaj 12 miesięcy całkowicie za darmo na rozruch!</p>
+                    <ul>
+                        <li><strong>1 rok pełnego dostępu 0 zł</strong></li>
+                        <li>Pełna moc silnika bez ograniczeń</li>
+                        <li>Automatyczne stawki po darmowym okresie</li>
+                        <li>Inicjalizacja przez Pley Wizard</li>
+                        <li>Pancerna stabilność systemu</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <h3>Paczka Enterprise</h3>
+                    <div class="price">$400+ <span>/ miesiąc</span></div>
+                    <p style="color: #94a3b8; font-size: 0.9rem;">Dla potężnych sieci esportowych o gigantycznej aktywności.</p>
+                    <ul>
+                        <li>Wszystkie funkcje kombajna bez limitu</li>
+                        <li>Najwyższy priorytet procesora w chmurze</li>
+                        <li>Dopasowanie stawek do skali serwera</li>
+                        <li>Ekskluzywny protokół zarządzania</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Terminal -->
         <div class="preview-container">
             <div class="preview-header">
                 <div class="preview-dots">
@@ -177,40 +266,40 @@
                     <span class="preview-dot dot-yellow"></span>
                     <span class="preview-dot dot-green"></span>
                 </div>
-                <span class="preview-title">NexBot // System Kombajn Core Live Sync</span>
+                <span class="preview-title">NexBot // SaaS License Auditor & Sync</span>
             </div>
             <div class="preview-body">
-                <p><span class="cmd">/pleywizard start</span> --sync-cloud --auto-architecture</p>
+                <p><span class="cmd">/licencja sprawdz</span> --free-tier --period="1_year"</p>
                 <div class="res">
-                    ⚡ <strong>Kombajn zsynchronizowany pomyślnie!</strong><br>
-                    🌐 Czas i strefa chmury: [ ZSYNCHRONIZOWANE ]<br>
-                    🛡️ Zasoby i role: Automatyczne przejęcie struktur z marszu.<br>
-                    🔗 Status silnika: <span style="color: #34d399; font-weight: 700;">[ PEŁNA MOC - SYSTEM AKTYWNY ]</span>
+                    ⚡ <strong>Licencja SaaS zweryfikowana pomyślnie!</strong><br>
+                    🎁 Status darmowego okresu: [ AKTYWNY - 1 ROK GRATIS ]<br>
+                    📊 Aktywność serwera i stawki: [ ELASTYCZNE / DOPASOWANE ]<br>
+                    🔗 Silnik kombajna: <span style="color: #34d399; font-weight: 700;">[ GOTOWY DO DZIAŁANIA ]</span>
                 </div>
             </div>
         </div>
 
-        <!-- Kafelki funkcji (Podstawy i cechy) -->
+        <!-- Kafelki funkcji -->
         <section class="features">
             <div class="card">
                 <span class="card-icon">🚀</span>
                 <h3>Pley Wizard & Autostart</h3>
-                <p>Wjeżdżasz na serwer, a kombajn w ułamku sekundy synchronizuje zegary w chmurze, dopasowuje daty i samoczynnie stawia cały szkielet bez kiwnięcia palcem.</p>
+                <p>Wjeżdżasz na serwer, a kombajn w ułamku sekundy synchronizuje zegary w chmurze i samoczynnie stawia cały szkielet bez kiwnięcia palcem.</p>
             </div>
             <div class="card">
                 <span class="card-icon">⚙️</span>
                 <h3>Natychmiastowe Przejęcie</h3>
-                <p>Koniec z ręcznym klepaniem ról i konfiguracji. Bot po wjeździe natychmiastowo zasysa obecną architekturę serwera i w pełni nią zarządza z niespotykaną dotąd precyzją.</p>
+                <p>Koniec z ręcznym klepaniem ról i konfiguracji. Bot po wjeździe natychmiastowo zasysa obecną architekturę serwera i w pełni nią zarządza.</p>
             </div>
             <div class="card">
                 <span class="card-icon">💎</span>
                 <h3>SaaS Nowej Generacji</h3>
-                <p>Elastyczny model licencjonowania dopasowany do skali serwera. Pełny dostęp, stabilność i bezkompromisowa wydajność zostawiająca całą konkurencję daleko w tyle.</p>
+                <p>Rok darmowego testowania na rozruch, a potem elastyczny model dopasowany realnie do skali i aktywności serwera. Czysty fair play.</p>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 NexBot Esports. Wszelkie prawa zastrzeżone. System w pełni niezależny.</p>
+            <p>&copy; 2026 NexBot Esports. Wszelkie prawa zastrzeżone. System licencjonowania autonomicznego SaaS.</p>
         </footer>
     </div>
 </body>
