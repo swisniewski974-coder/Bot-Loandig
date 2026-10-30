@@ -18,30 +18,63 @@
         }
         header {
             text-align: center;
-            padding: 80px 20px 40px 20px;
+            padding: 90px 20px 60px 20px;
             background: radial-gradient(circle at center, #11141d 0%, #05070b 100%);
         }
         header h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             color: #00f3ff;
-            text-shadow: 0 0 25px rgba(0,243,255,0.6);
+            text-shadow: 0 0 30px rgba(0,243,255,0.7);
             letter-spacing: 3px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         header p {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: #8b949e;
-            max-width: 700px;
-            margin: 0 auto;
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+        }
+        /* PRZYCISK ZAPROSZENIA BOTA (HERO) */
+        .btn-invite {
+            display: inline-block;
+            background: linear-gradient(135deg, #00f3ff, #7b61ff);
+            color: #05070b;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 900;
+            padding: 16px 36px;
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0,243,255,0.5);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-invite:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 45px rgba(123,97,255,0.8);
         }
         .pricing-section {
             background: radial-gradient(circle at center, #11141d 0%, #05070b 100%);
             padding: 40px 20px 100px 20px;
             text-align: center;
+            border-top: 1px solid #161b22;
         }
         .pricing-container {
             max-width: 1100px;
             margin: 0 auto;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            color: #00f3ff;
+            text-shadow: 0 0 20px rgba(0,243,255,0.6);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .section-desc {
+            font-size: 1.15rem;
+            color: #8b949e;
+            margin-bottom: 40px;
         }
         .promo-banner {
             background: linear-gradient(135deg, rgba(0,243,255,0.15) 0%, rgba(123,97,255,0.15) 100%);
@@ -186,12 +219,18 @@
 
     <header>
         <h1>PROJEKT X</h1>
-        <p>Ekosystem nowej generacji dla zaawansowanych społeczności Discorda. Pełna autonomia, zero ludzkich opóźnień.</p>
+        <p>Ekosystem nowej generacji dla zaawansowanych społeczności Discorda. Pełna autonomia, dynamiczny odczyt ról, zapory systemowe i zero ludzkich opóźnień.</p>
+        
+        <!-- BEZPOŚREDNI PRZYCISK ZAPROSZENIA BOTA -->
+        <a href="https://discord.com/oauth2/authorize?client_id=1554469566879502369&permissions=8&integration_type=0&scope=bot" target="_blank" class="btn-invite">🚀 Dodaj Bota na Serwer</a>
     </header>
 
     <section id="pricing" class="pricing-section">
         <div class="pricing-container">
             
+            <h2 class="section-title">💎 PAKIETY I LICENCJE SAAS</h2>
+            <p class="section-desc">W pełni autonomiczny kombajn dla Twojego serwera. Przejmij kontrolę.</p>
+
             <!-- BANER INFORMACYJNY: ROK ZA DARMO -->
             <div class="promo-banner">
                 <h3>🚀 START BEZ RYZYKA: 1 ROK OPERACYJNY CAŁKOWICIE ZA DARMO!</h3>
@@ -213,7 +252,7 @@
                             <li>✅ Stabilne wsparcie techniczne</li>
                         </ul>
                     </div>
-                    <a href="https://revolut.me/szymon1ynj" target="_blank" class="btn btn-standard">Aktywuj 1 rok za free</a>
+                    <a href="https://revolut.me/szymon1ynj" target="_blank" class="btn btn-standard">Opłać po roku</a>
                 </div>
 
                 <!-- PAKIET 2: ENTERPRISE / DUŻA SPOŁECZNOŚĆ -->
@@ -230,7 +269,7 @@
                             <li>📊 Dynamiczna telemetria i obsługa ruchu</li>
                         </ul>
                     </div>
-                    <a href="https://revolut.me/szymon1ynj" target="_blank" class="btn btn-featured">Aktywuj 1 rok za free</a>
+                    <a href="https://revolut.me/szymon1ynj" target="_blank" class="btn btn-featured">Opłać po roku</a>
                 </div>
 
             </div>
