@@ -1,51 +1,245 @@
-<!-- SEKCJA CENNIKA SAAS - NEON PROJEKT X -->
-<section id="pricing" style="background: radial-gradient(circle at center, #11141d 0%, #05070b 100%); color: #ffffff; padding: 80px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
-    <div style="max-width: 1100px; margin: 0 auto;">
-        
-        <h2 style="font-size: 2.8rem; margin-bottom: 15px; color: #00f3ff; text-shadow: 0 0 20px rgba(0,243,255,0.6); letter-spacing: 2px;">💎 PAKIETY I LICENCJE SAAS</h2>
-        <p style="font-size: 1.2rem; color: #8b949e; margin-bottom: 40px;">Pełna autonomia serwera. Zero ludzkich opóźnień, pancerna zapora i maksymalna wydajność.</p>
-        
-        <!-- NEONOWY BANER: ROK ZA FREE -->
-        <div style="background: linear-gradient(135deg, rgba(0,243,255,0.15) 0%, rgba(123,97,255,0.15) 100%); border: 1px solid #00f3ff; border-radius: 12px; padding: 25px; margin-bottom: 50px; box-shadow: 0 0 25px rgba(0,243,255,0.25);">
-            <h3 style="margin: 0 0 10px 0; font-size: 1.5rem; color: #00f3ff; text-shadow: 0 0 10px rgba(0,243,255,0.5);">🚀 PIERWSZY ROK UŻYTKOWANIA: CAŁKOWICIE ZA DARMO!</h3>
-            <p style="margin: 0; font-size: 1.05rem; color: #c9d1d9;">Każdy nowy serwer otrzymuje pełny pakiet operacyjny na 12 miesięcy bez żadnych opłat. Testuj bez limitów.</p>
-        </div>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJEKT X | Autonomiczny System SaaS dla Discorda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #05070b;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 80px 20px 40px 20px;
+            background: radial-gradient(circle at center, #11141d 0%, #05070b 100%);
+        }
+        header h1 {
+            font-size: 3.5rem;
+            color: #00f3ff;
+            text-shadow: 0 0 25px rgba(0,243,255,0.6);
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        header p {
+            font-size: 1.25rem;
+            color: #8b949e;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pricing-section {
+            background: radial-gradient(circle at center, #11141d 0%, #05070b 100%);
+            padding: 40px 20px 100px 20px;
+            text-align: center;
+        }
+        .pricing-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .promo-banner {
+            background: linear-gradient(135deg, rgba(0,243,255,0.15) 0%, rgba(123,97,255,0.15) 100%);
+            border: 1px solid #00f3ff;
+            border-radius: 14px;
+            padding: 35px;
+            margin-bottom: 50px;
+            box-shadow: 0 0 35px rgba(0,243,255,0.25);
+            text-align: left;
+        }
+        .promo-banner h3 {
+            font-size: 1.8rem;
+            color: #00f3ff;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(0,243,255,0.5);
+        }
+        .promo-banner p {
+            font-size: 1.1rem;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 45px 35px;
+            width: 360px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+        }
+        .card.featured {
+            border: 2px solid #7b61ff;
+            box-shadow: 0 0 40px rgba(123,97,255,0.4);
+            position: relative;
+        }
+        .badge {
+            position: absolute;
+            top: -16px;
+            right: 25px;
+            background: linear-gradient(135deg, #7b61ff, #00f3ff);
+            color: #05070b;
+            font-size: 0.8rem;
+            font-weight: 900;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0,243,255,0.5);
+        }
+        .card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card p.desc {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            min-height: 45px;
+        }
+        .price {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        .card.standard .price {
+            color: #00f3ff;
+            text-shadow: 0 0 10px rgba(0,243,255,0.3);
+        }
+        .card.featured .price {
+            color: #7b61ff;
+            text-shadow: 0 0 15px rgba(123,97,255,0.6);
+        }
+        .price span {
+            font-size: 1rem;
+            color: #8b949e;
+            font-weight: normal;
+        }
+        .features-list {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+        .features-list li {
+            color: #c9d1d9;
+            font-size: 0.95rem;
+            line-height: 2.2;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            transition: all 0.2s;
+        }
+        .btn-standard {
+            background: transparent;
+            border: 2px solid #00f3ff;
+            color: #00f3ff;
+            box-shadow: 0 0 15px rgba(0,243,255,0.2);
+        }
+        .btn-standard:hover {
+            background: #00f3ff;
+            color: #05070b;
+            box-shadow: 0 0 25px rgba(0,243,255,0.5);
+        }
+        .btn-featured {
+            background: linear-gradient(135deg, #7b61ff, #00f3ff);
+            color: #05070b;
+            box-shadow: 0 0 20px rgba(123,97,255,0.6);
+        }
+        .btn-featured:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 30px rgba(123,97,255,0.9);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #030406;
+            color: #484f58;
+            font-size: 0.9rem;
+            border-top: 1px solid #161b22;
+        }
+    </style>
+</head>
+<body>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+    <header>
+        <h1>PROJEKT X</h1>
+        <p>Ekosystem nowej generacji dla zaawansowanych społeczności Discorda. Pełna autonomia, zero ludzkich opóźnień.</p>
+    </header>
+
+    <section id="pricing" class="pricing-section">
+        <div class="pricing-container">
             
-            <!-- PAKIET 1: STARTER / ŚREDNIA SPOŁECZNOŚĆ -->
-            <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 16px; padding: 45px 35px; width: 340px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); text-align: left; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease;">
-                <div>
-                    <h3 style="font-size: 1.6rem; margin-bottom: 10px; color: #ffffff;">Starter / Średnia</h3>
-                    <p style="color: #8b949e; font-size: 0.95rem; margin-bottom: 25px;">Dla rozwijających się społeczności i standardowych serwerów.</p>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: #00f3ff; margin-bottom: 25px; text-shadow: 0 0 10px rgba(0,243,255,0.3);">$50 <span style="font-size: 1rem; color: #8b949e; font-weight: normal;">/ miesiąc</span></div>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 35px 0; color: #c9d1d9; font-size: 0.95rem; line-height: 2.0;">
-                        <li>✅ Standardowa automatyzacja</li>
-                        <li>✅ Dynamiczny panel ról i języka</li>
-                        <li>✅ Obsługa mniejszych społeczności</li>
-                        <li>✅ Stabilne wsparcie techniczne</li>
-                    </ul>
-                </div>
-                <a href="https://revolut.me/szymon1ynj" target="_blank" style="background: transparent; border: 2px solid #00f3ff; color: #00f3ff; text-decoration: none; padding: 14px; border-radius: 8px; font-weight: bold; text-align: center; display: block; box-shadow: 0 0 15px rgba(0,243,255,0.2); transition: all 0.2s;">Wybierz Pakiet</a>
+            <!-- BANER INFORMACYJNY: ROK ZA DARMO -->
+            <div class="promo-banner">
+                <h3>🚀 START BEZ RYZYKA: 1 ROK OPERACYJNY CAŁKOWICIE ZA DARMO!</h3>
+                <p>Każdy serwer po wdrożeniu instancji otrzymuje automatycznie <strong>12 miesięcy pełnego dostępu (Full Free)</strong>[span_1](start_span)[span_1](end_span). Przetestuj pancerną wydajność, zapory i automatyzację bez ponoszenia żadnych kosztów. Rozliczenie subskrypcyjne aktywuje się dopiero po zakończeniu darmowego okresu próbnego.</p>
             </div>
 
-            <!-- PAKIET 2: ENTERPRISE / DUŻA SPOŁECZNOŚĆ (FLAGOWY NEON) -->
-            <div style="background: #0d1117; border: 2px solid #7b61ff; border-radius: 16px; padding: 45px 35px; width: 340px; box-shadow: 0 0 40px rgba(123,97,255,0.4); text-align: left; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
-                <div style="position: absolute; top: -16px; right: 25px; background: linear-gradient(135deg, #7b61ff, #00f3ff); color: #05070b; font-size: 0.8rem; font-weight: 900; padding: 6px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 0 15px rgba(0,243,255,0.5);">Najwyższa moc</div>
-                <div>
-                    <h3 style="font-size: 1.6rem; margin-bottom: 10px; color: #ffffff;">Enterprise / Duża</h3>
-                    <p style="color: #8b949e; font-size: 0.95rem; margin-bottom: 25px;">Dla wielkich projektów, gdzie bot hula non stop.</p>
-                    <div style="font-size: 2.5rem; font-weight: bold; color: #7b61ff; margin-bottom: 25px; text-shadow: 0 0 15px rgba(123,97,255,0.6);">$400+ <span style="font-size: 1rem; color: #8b949e; font-weight: normal;">/ miesiąc</span></div>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 35px 0; color: #c9d1d9; font-size: 0.95rem; line-height: 2.0;">
-                        <li>⚡ Bot działa w trybie non-stop</li>
-                        <li>🛡️ Zaawansowane Zapory SaaS i Anti-Raid</li>
-                        <li>🚀 Pełna autonomia (Brak ludzkich opóźnień)</li>
-                        <li>📊 Dynamiczna telemetria i obsługa ruchu</li>
-                    </ul>
+            <div class="cards-grid">
+                
+                <!-- PAKIET 1: STARTER / ŚREDNIA SPOŁECZNOŚĆ -->
+                <div class="card standard">
+                    <div>
+                        <h3>Starter / Średnia</h3>
+                        <p class="desc">Dla rozwijających się społeczności i standardowych serwerów po darmowym roku.</p>
+                        <div class="price">$50 <span>/ miesiąc</span></div>
+                        <ul class="features-list">
+                            <li>✅ 1 rok testowy na start za free[span_2](start_span)[span_2](end_span)</li>
+                            <li>✅ Standardowa automatyzacja</li>
+                            <li>✅ Dynamiczny panel ról i języka</li>
+                            <li>✅ Stabilne wsparcie techniczne</li>
+                        </ul>
+                    </div>
+                    <a href="https://revolut.me/szymon1ynj" target="_blank" class="btn btn-standard">Opłać po roku</a>
                 </div>
-                <a href="https://revolut.me/szymon1ynj" target="_blank" style="background: linear-gradient(135deg, #7b61ff, #00f3ff); color: #05070b; text-decoration: none; padding: 14px; border-radius: 8px; font-weight: bold; text-align: center; display: block; box-shadow: 0 0 20px rgba(123,97,255,0.6); transition: all 0.2s;">Zamów Kombajn</a>
-            </div>
 
+                <!-- PAKIET 2: ENTERPRISE / DUŻA SPOŁECZNOŚĆ -->
+                <div class="card featured">
+                    <div class="badge">Najwyższa moc</div>
+                    <div>
+                        <h3>Enterprise / Duża</h3>
+                        <p class="desc">Dla wielkich projektów o dużym ruchu, gdzie system hula non stop.</p>
+                        <div class="price">$400+ <span>/ miesiąc</span></div>
+                        <ul class="features-list">
+                            <li>⚡ 1 rok testowy na start za free[span_3](start_span)[span_3](end_span)</li>
+                            <li>🛡️ Zaawansowane Zapory SaaS i Anti-Raid</li>
+                            <li>🚀 Pełna autonomia (Brak ludzkich opóźnień)</li>
+                            <li>📊 Dynamiczna telemetria i obsługa ruchu</li>
+                        </ul>
+                    </div>
+                    <a href="https://revolut.me/szymon1ynj" target="_blank" class="btn btn-featured">Opłać po roku</a>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 PROJEKT X. Wszelkie prawa zastrzeżone. Architektura Autonomiczna.</p>
+    </footer>
+
+</body>
+</html>
