@@ -1,232 +1,44 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJEKT X • Najlepszy Bot Esportowy na Discorda</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            overflow-x: hidden;
-        }
-        header {
-            background: rgba(17, 24, 39, 0.9);
-            border-bottom: 1px solid #1f2937;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: #38bdf8;
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-        }
-        .badge-top {
-            background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        main {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            background: linear-gradient(to right, #38bdf8, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p.subtitle {
-            font-size: 1.15rem;
-            color: #9ca3af;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        .cta-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #3b82f6, #6366f1);
-            color: white;
-            font-weight: 700;
-            padding: 14px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-bottom: 40px;
-        }
-        .cta-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(99, 102, 241, 0.6);
-        }
-        .terminal {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 14px;
-            padding: 24px;
-            text-align: left;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .terminal-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
-            border-bottom: 1px solid #1f2937;
-            padding-bottom: 12px;
-            font-size: 0.85rem;
-            color: #9ca3af;
-            letter-spacing: 1px;
-        }
-        .dots {
-            display: flex;
-            gap: 6px;
-        }
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-        .dot-red { background: #ef4444; }
-        .dot-yellow { background: #f59e0b; }
-        .dot-green { background: #10b981; }
+<!-- SEKCJA CENNIKA SAAS - PROJEKT X -->
+<section id="pricing" style="background-color: #0d1117; color: #ffffff; padding: 60px 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: #5865F2;">💎 PAKIETY I LICENCJE SAAS</h2>
+        <p style="font-size: 1.1rem; color: #8b949e; margin-bottom: 50px;">Wybierz autonomiczny system dla swojego serwera. Zero ludzkich opóźnień, pełna automatyzacja.</p>
         
-        .command-line {
-            font-family: monospace;
-            color: #f87171;
-            font-size: 1rem;
-            margin-bottom: 16px;
-        }
-        .embed-box {
-            background: #0f172a;
-            border-left: 4px solid #38bdf8;
-            border-radius: 8px;
-            padding: 16px;
-            font-family: monospace;
-            font-size: 0.9rem;
-            color: #e2e8f0;
-        }
-        .embed-title {
-            color: #38bdf8;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-        .embed-row {
-            margin-bottom: 6px;
-            color: #94a3b8;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: left;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-        .card h3 {
-            color: #38bdf8;
-            margin-bottom: 10px;
-            font-size: 1.15rem;
-        }
-        .card p {
-            color: #9ca3af;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: rgba(17, 24, 39, 0.9);
-            border-top: 1px solid #1f2937;
-            color: #6b7280;
-            font-size: 0.85rem;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="logo">PROJEKT X</div>
-        <div class="badge-top">
-            🔥 NEXT-GEN DISCORD BOT
-        </div>
-    </header>
-
-    <main>
-        <h1>Najlepszy Bot Esportowy na Discorda</h1>
-        <p class="subtitle">Przenieś rywalizację na swoim serwerze na poziom mistrzowski dzięki zaawansowanym systemom turniejowym i automatycznej obsłudze graczy.</p>
-        
-        <a href="https://discord.com" target="_blank" class="cta-btn">Dodaj do Disclorda</a>
-
-        <div class="terminal">
-            <div class="terminal-header">
-                <div class="dots">
-                    <div class="dot dot-red"></div>
-                    <div class="dot dot-yellow"></div>
-                    <div class="dot dot-green"></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+            
+            <!-- PAKIET 1: STARTER / ŚREDNIA SPOŁECZNOŚĆ -->
+            <div style="background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 40px; width: 320px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #ffffff;">Starter / Średnia</h3>
+                    <p style="color: #8b949e; font-size: 0.95rem; margin-bottom: 20px;">Dla rozwijających się społeczności i serwerów standardowych.</p>
+                    <div style="font-size: 2.2rem; font-weight: bold; color: #5865F2; margin-bottom: 20px;">$50 <span style="font-size: 1rem; color: #8b949e; font-weight: normal;">/ miesiąc</span></div>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; color: #c9d1d9; font-size: 0.95rem; line-height: 1.8;">
+                        <li>✅ Standardowa automatyzacja</li>
+                        <li>✅ Panel ról i języka</li>
+                        <li>✅ Obsługa mniejszych społeczności</li>
+                        <li>✅ Wsparcie techniczne</li>
+                    </ul>
                 </div>
-                <span>SYSTEM ESPORTOWY // LIVE TERMINAL</span>
+                <a href="https://revolut.me/szymon1ynj" target="_blank" style="background: #238636; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; text-align: center; display: block; transition: background 0.2s;">Wybierz Pakiet</a>
             </div>
-            <div class="command-line">
-                /turniej stworz gra: "CS2 5v5" pula: "1000 PLN"
-            </div>
-            <div class="embed-box">
-                <div class="embed-title">⚡ Turniej zainicjalizowany pomyślnie!</div>
-                <div class="embed-row">🏆 Kategoria: CS2 5v5 Pro | Pula: 1000 PLN</div>
-                <div class="embed-row">📊 Drabinka: Automatyczna (Double Elimination)</div>
-                <div class="embed-row" style="color: #34d399;">🔗 Status: [ REKRUTACJA OTWARTA ]</div>
-            </div>
-        </div>
 
-        <div class="grid">
-            <div class="card">
-                <h3>⚡ Pley Wizard (Automatyzacja)</h3>
-                <p>Błyskawiczna konfiguracja struktury turniejowej, automatyczne tworzenie kanałów meczowych, zarządzanie składami oraz dynamiczne generowanie drabinek pucharowych bez kiwanego palcem.</p>
+            <!-- PAKIET 2: ENTERPRISE / DUŻA SPOŁECZNOŚĆ (FLAGOWY) -->
+            <div style="background: #161b22; border: 2px solid #5865F2; border-radius: 12px; padding: 40px; width: 320px; box-shadow: 0 8px 32px rgba(88,101,242,0.3); text-align: left; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div style="position: absolute; top: -15px; right: 20px; background: #5865F2; color: white; font-size: 0.75rem; font-weight: bold; padding: 5px 12px; border-radius: 20px; text-transform: uppercase;">Najwyższa moc</div>
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #ffffff;">Enterprise / Duża</h3>
+                    <p style="color: #8b949e; font-size: 0.95rem; margin-bottom: 20px;">Dla wielkich projektów, gdzie bot hula non stop.</p>
+                    <div style="font-size: 2.2rem; font-weight: bold; color: #5865F2; margin-bottom: 20px;">$400+ <span style="font-size: 1rem; color: #8b949e; font-weight: normal;">/ miesiąc</span></div>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 30px 0; color: #c9d1d9; font-size: 0.95rem; line-height: 1.8;">
+                        <li>⚡ Bot działa w trybie non-stop</li>
+                        <li>👻 Tryb Ducha & Zapory SaaS</li>
+                        <li>🛡️ Brak ludzkich opóźnień (Autonomia)</li>
+                        <li>📊 Dynamiczna telemetria i ruch</li>
+                    </ul>
+                </div>
+                <a href="https://revolut.me/szymon1ynj" target="_blank" style="background: #5865F2; color: white; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: bold; text-align: center; display: block; transition: background 0.2s;">Zamów Kombajn</a>
             </div>
-            <div class="card">
-                <h3>🛡️ SaaS & Zapora Anty-Raid</h3>
-                <p>Pancerny system autoryzacji serwerowej, inteligentna ochrona przed botami masowymi, natychmiastowe wykrywanie spamu oraz pełne wsparcie SaaS dla zarządzania licencjami w tle.</p>
-            </div>
-        </div>
-    </main>
 
-    <footer>
-        <p>© 2026 PROJEKT X • Wszelkie prawa zastrzeżone.</p>
-    </footer>
-</body>
-</html>
+        </div>
+    </div>
+</section>
